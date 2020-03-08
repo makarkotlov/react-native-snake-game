@@ -1,0 +1,63 @@
+{
+  "name": "snake",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "clear": "watchman watch-del-all && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-map-* && rm -rf $TMPDIR/react-* && rm -rf node_modules && npm i"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.8.1",
+    "@react-native-community/masked-view": "^0.1.7",
+    "@react-navigation/native": "^5.0.9",
+    "@react-navigation/stack": "^5.1.1",
+    "apsl-react-native-button": "^3.1.1",
+    "mobx": "^5.15.4",
+    "mobx-persist": "^0.4.1",
+    "mobx-react-lite": "^1.5.2",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-exit-app": "^1.1.0",
+    "react-native-game-engine": "^1.1.1",
+    "react-native-gesture-handler": "^1.6.0",
+    "react-native-reanimated": "^1.7.0",
+    "react-native-responsive-screen": "^1.4.0",
+    "react-native-background-color": "0.0.8",
+    "react-native-splash-screen": "^3.2.0",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@babel/runtime": "^7.8.7",
+    "@react-native-community/eslint-config": "0.0.7",
+    "@types/jest": "^25.1.4",
+    "@types/react": "^16.9.23",
+    "@types/react-native": "^0.61.20",
+    "@types/react-test-renderer": "^16.9.2",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "eslint-plugin-react-native": "^3.8.1",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-native-console-time-polyfill": "^1.2.1",
+    "react-test-renderer": "16.9.0",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
