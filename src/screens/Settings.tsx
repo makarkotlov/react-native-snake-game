@@ -1,5 +1,5 @@
 import React from 'react'
-import { observer } from 'mobx-react-lite'
+import { observer } from 'mobx-react'
 import Button from 'apsl-react-native-button'
 import BackgroundColor from 'react-native-background-color'
 import { StyleSheet, StatusBar, View, Text, Platform, ScrollView } from 'react-native'

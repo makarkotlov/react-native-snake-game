@@ -1,6 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
-import { observer } from 'mobx-react-lite'
+import { observer } from 'mobx-react'
 import c from '../constants'
 import { useStores } from '../mobx'
 import { ISettingsStore } from '../mobx/settingsStore'

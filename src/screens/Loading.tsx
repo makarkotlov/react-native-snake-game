@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { observer } from 'mobx-react-lite'
+import { observer } from 'mobx-react'
 import SplashScreen from 'react-native-splash-screen'
 import BackgroundColor from 'react-native-background-color'
 import { StyleSheet, StatusBar, View, Text, Animated, Platform } from 'react-native'
