@@ -35,6 +35,7 @@ export default {
     DIFFICULTIES: ['low', 'medium', 'high'],
     THEMES: ['yellow', 'blue', 'green'],
     USE_SWIPES: [true, false],
+    TELEPORT: [true, false],
   },
   LOADING_DURATION: 2000,
   THEMES,

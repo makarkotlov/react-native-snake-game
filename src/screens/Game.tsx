@@ -19,7 +19,7 @@ interface UpdateFrequency {
 }
 
 const UPDATE_FREQUENCY: UpdateFrequency = {
-  low: 10,
+  low: 15,
   medium: 5,
   high: 2,
 }
@@ -45,7 +45,7 @@ const buildLevel = (gridSize: number, difficulty: string) => ({
 const Game = observer(({ navigation: { goBack } }) => {
   const {
     settingsStore: {
-      settings: { boardSize: selectedBoardSize, useSwipes, difficulty, theme },
+      settings: { boardSize: selectedBoardSize, useSwipes, difficulty, theme, useTeleport },
     },
   }: ISettingsStore = useStores()
   const gridSize = parseInt(selectedBoardSize.slice(0, 2), 10)
@@ -75,7 +75,7 @@ const Game = observer(({ navigation: { goBack } }) => {
         <GameEngine
           ref={engineRef}
           style={{ width: boardSize, height: boardSize, backgroundColor: 'white', flex: undefined }}
-          systems={[GameLoop(gridSize, useSwipes)]}
+          systems={[GameLoop(gridSize, useSwipes, useTeleport)]}
           entities={buildLevel(gridSize, difficulty)}
           running={isRunning}
           onEvent={onEvent}

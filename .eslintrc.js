@@ -3,8 +3,20 @@ module.exports = {
   env: {
     browser: 1,
   },
-  extends: ['airbnb'],
-  parser: 'babel-eslint',
+  extends: ['airbnb', '@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  ecmaFeatures: {
+    jsx: true,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
     'import/prefer-default-export': 0,
     'no-use-before-define': 0,
