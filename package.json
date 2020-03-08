@@ -26,6 +26,8 @@
     "react-native-gesture-handler": "^1.6.0",
     "react-native-reanimated": "^1.7.0",
     "react-native-responsive-screen": "^1.4.0",
+    "react-native-v8": "^0.61.5-patch.2",
+    "v8-android-nointl": "^8.80.0",
     "react-native-background-color": "0.0.8",
     "react-native-splash-screen": "^3.2.0",
     "react-native-safe-area-context": "^0.7.3",

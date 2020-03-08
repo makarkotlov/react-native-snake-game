@@ -176,6 +176,11 @@ android {
 
         }
     }
+
+    packagingOptions {
+        // Make sure libjsc.so does not packed in APK
+        exclude "**/libjsc.so"
+    }
 }
 
 dependencies {
@@ -185,6 +190,8 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02' // For react-native-screens
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19' // For preloader gif
     implementation project(':react-native-splash-screen') // For react-native-splash
+    // Add v8-android - prebuilt libv8android.so into APK 
+    implementation 'org.chromium:v8-android:+'
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
