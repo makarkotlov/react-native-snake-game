@@ -39,7 +39,7 @@ interface Object {
   events: Array<{ type: string }>
 }
 
-const GameLoop = (gridSize: number, useSwipes: boolean) => (
+const GameLoop = (gridSize: number, useSwipes: boolean, useTeleport: boolean) => (
   entities: Entities,
   { touches, dispatch, events }: Object
 ) => {
@@ -94,14 +94,30 @@ const GameLoop = (gridSize: number, useSwipes: boolean) => (
   head.nextMove -= 1
   if (head.nextMove === 0) {
     head.nextMove = head.updateFrequency
-    if (
-      head.position[0] + head.xspeed < 0 ||
-      head.position[0] + head.xspeed >= gridSize ||
-      head.position[1] + head.yspeed < 0 ||
-      head.position[1] + head.yspeed >= gridSize
-    ) {
-      // snake hits the wall
-      dispatch({ type: 'game-over' })
+    const isSnakeHitTheLeftWall = head.position[0] + head.xspeed < 0
+    const isSnakeHitTheRightWall = head.position[0] + head.xspeed >= gridSize
+    const isSnakeHitTheTopWall = head.position[1] + head.yspeed < 0
+    const isSnakeHitTheBottomWall = head.position[1] + head.yspeed >= gridSize
+    const isSnakeHitTheWallHorizontally = isSnakeHitTheLeftWall || isSnakeHitTheRightWall
+    const isSnakeHitTheWallVertically = isSnakeHitTheTopWall || isSnakeHitTheBottomWall
+    if (isSnakeHitTheWallHorizontally || isSnakeHitTheWallVertically) {
+      if (!useTeleport) {
+        return dispatch({ type: 'game-over' })
+      }
+      // teleporting
+      const newTail = [[head.position[0], head.position[1]]]
+      tail.elements = newTail.concat(tail.elements).slice(0, -1)
+      if (isSnakeHitTheWallHorizontally) {
+        if (isSnakeHitTheRightWall) {
+          head.position[0] = 0
+        } else {
+          head.position[0] = gridSize - 1
+        }
+      } else if (isSnakeHitTheBottomWall) {
+        head.position[1] = 0
+      } else {
+        head.position[1] = gridSize - 1
+      }
     } else {
       // move the tail
       const newTail = [[head.position[0], head.position[1]]]

@@ -2,7 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react-lite'
 import Button from 'apsl-react-native-button'
 import BackgroundColor from 'react-native-background-color'
-import { StyleSheet, StatusBar, SafeAreaView, View, Text, Platform } from 'react-native'
+import { StyleSheet, StatusBar, View, Text, Platform, ScrollView } from 'react-native'
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen'
 import c from '../constants'
 import { useStores } from '../mobx'
@@ -16,11 +16,13 @@ const Settings = observer(() => {
         difficulty: selectedDifficulty,
         theme: selectedTheme,
         useSwipes: isUseSwipes,
+        useTeleport: isUseTeleport,
       },
       updateBoardSize,
       updateDifficulty,
       updateTheme,
       updateUseSwipes,
+      updateTeleport,
     },
   }: ISettingsStore = useStores()
 
@@ -31,7 +33,7 @@ const Settings = observer(() => {
         backgroundColor={c.THEMES[selectedTheme].secondaryColor}
         barStyle="light-content"
       />
-      <View>
+      <ScrollView>
         <View style={styles.row}>
           <Text style={styles.text}>Board size</Text>
           <View style={styles.btnRow}>
@@ -129,7 +131,31 @@ const Settings = observer(() => {
             ))}
           </View>
         </View>
-      </View>
+        <View style={styles.row}>
+          <Text style={styles.text}>Teleportation</Text>
+          <View style={styles.btnRow}>
+            {c.SETTINGS.TELEPORT.map((teleportState, i) => (
+              <Button
+                key={`${teleportState}-${i}`}
+                onPress={() => updateTeleport(teleportState)}
+                style={[
+                  styles.btnContainer,
+                  {
+                    backgroundColor:
+                      teleportState === isUseTeleport
+                        ? c.THEMES[selectedTheme].primaryColor
+                        : c.THEMES[selectedTheme].darkerPrimaryColor,
+                  },
+                ]}
+              >
+                <Text style={[styles.btnText, { color: c.THEMES[selectedTheme].secondaryColor }]}>
+                  {teleportState ? 'yes' : 'no'}
+                </Text>
+              </Button>
+            ))}
+          </View>
+        </View>
+      </ScrollView>
     </View>
   )
 })

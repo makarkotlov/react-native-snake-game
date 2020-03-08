@@ -8,16 +8,24 @@ export interface ISettingsStore {
       difficulty: string
       theme: string
       useSwipes: boolean
+      useTeleport: boolean
     }
     setLoaded: Function
     updateBoardSize: Function
     updateDifficulty: Function
     updateTheme: Function
     updateUseSwipes: Function
+    updateTeleport: Function
   }
 }
 
-const initialState = { boardSize: '15x20', difficulty: 'low', theme: 'yellow', useSwipes: false }
+const initialState = {
+  boardSize: '15x20',
+  difficulty: 'low',
+  theme: 'yellow',
+  useSwipes: false,
+  useTeleport: false,
+}
 
 class SettingsStore {
   @persist('object') @observable settings = initialState
@@ -47,6 +55,11 @@ class SettingsStore {
   @action.bound
   updateUseSwipes(useSwipes: boolean) {
     this.settings.useSwipes = useSwipes
+  }
+
+  @action.bound
+  updateTeleport(useTeleport: boolean) {
+    this.settings.useTeleport = useTeleport
   }
 }
 
