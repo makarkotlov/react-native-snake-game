@@ -19,4 +19,24 @@
     <li>npm i</li>
     <li>cd android && ./gradlew clean (if you built the project before)</li>
     <li>Profile with Android Studio profiler</li>
+    <li>Profile in release by adding in android/app/build.gradle</li>
 </ul>
+
+```gradle
+...
+ android {
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileOptions {...
+```
+
+<p>and in application in AndroidManifest.xml</p>
+
+```xml
+...
+    android:debuggable="true">
+...
+```
