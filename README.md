@@ -15,8 +15,9 @@
 </ul>
 <h2>Setup</h2>
 <ul>
-    <li>git clone</li>
-    <li>npm i</li>
+    <li>`git clone`</li>
+    <li>`npm i`</li>
+    <li>`cd ios && pod install`</li>
 </ul>
 <h2>Engine change</h2>
 <ul>
