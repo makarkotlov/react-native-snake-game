@@ -23,7 +23,7 @@
 
 1. Checkout the branch with different engine
 2. `npm i`
-3. `cd android && ./gradlew clean` (if you built the project before)
+3. `cd android && ./gradlew clean` (if you have built the project before)
 4. Profile with Android Studio profiler
 5. Profile in release by adding in android/app/build.gradle
 
