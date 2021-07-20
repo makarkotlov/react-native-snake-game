@@ -20,7 +20,7 @@
     "mobx-persist": "^0.4.1",
     "mobx-react-lite": "^1.5.2",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "0.62.3",
     "react-native-exit-app": "^1.1.0",
     "react-native-game-engine": "^1.1.1",
     "react-native-gesture-handler": "^1.6.0",
