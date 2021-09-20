@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { observer } from 'mobx-react'
+import { observer } from 'mobx-react-lite'
 import Button from 'apsl-react-native-button'
 import { GameEngine } from 'react-native-game-engine'
 import { StyleSheet, StatusBar, View, Alert } from 'react-native'

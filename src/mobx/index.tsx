@@ -3,6 +3,11 @@ import { create } from 'mobx-persist'
 import AsyncStorage from '@react-native-community/async-storage'
 import c from '../constants'
 import { SettingsStore, ISettingsStore } from './settingsStore'
+import { configure } from "mobx"
+
+configure({
+  useProxies: "never"
+})
 
 const hydrate = create({ storage: AsyncStorage, jsonify: true })
 

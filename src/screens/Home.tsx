@@ -1,5 +1,5 @@
 import React from 'react'
-import { observer } from 'mobx-react'
+import { observer } from 'mobx-react-lite'
 import RNExitApp from 'react-native-exit-app'
 import Button from 'apsl-react-native-button'
 import { StyleSheet, StatusBar, SafeAreaView, View, Text } from 'react-native'
