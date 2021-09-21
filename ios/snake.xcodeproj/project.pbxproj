@@ -11,8 +11,8 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		92F2D3CF6FC8CF0C40820816 /* libPods-snake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3801F7CA651750785CE88FF3 /* libPods-snake.a */; };
 		8661084B2C1540B3B12BA248 /* joystix.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59088794A9254E70907D7AD8 /* joystix.ttf */; };
+		92F2D3CF6FC8CF0C40820816 /* libPods-snake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3801F7CA651750785CE88FF3 /* libPods-snake.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +31,7 @@
 		4AF3B183AC61ADCF6CE8E7E4 /* Pods-snake-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snake-tvOS.release.xcconfig"; path = "Target Support Files/Pods-snake-tvOS/Pods-snake-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		4E41508CF6B77A3D4E557190 /* Pods-snakeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snakeTests.release.xcconfig"; path = "Target Support Files/Pods-snakeTests/Pods-snakeTests.release.xcconfig"; sourceTree = "<group>"; };
 		53447EDD640204B11D32D6E7 /* libPods-snakeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-snakeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59088794A9254E70907D7AD8 /* joystix.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = joystix.ttf; path = ../assets/fonts/joystix.ttf; sourceTree = "<group>"; };
 		5BFD3D2BF7B7F1C03EB3C209 /* Pods-snake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snake.release.xcconfig"; path = "Target Support Files/Pods-snake/Pods-snake.release.xcconfig"; sourceTree = "<group>"; };
 		5DCAD6838EA705BD78361CA6 /* libPods-snake-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-snake-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7CCE23B9D35357A057C415 /* Pods-snakeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snakeTests.debug.xcconfig"; path = "Target Support Files/Pods-snakeTests/Pods-snakeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EF6939A03BE9FA1E0A4CDFA9 /* Pods-snake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snake.debug.xcconfig"; path = "Target Support Files/Pods-snake/Pods-snake.debug.xcconfig"; sourceTree = "<group>"; };
-		59088794A9254E70907D7AD8 /* joystix.ttf */ = {isa = PBXFileReference; name = "joystix.ttf"; path = "../assets/fonts/joystix.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +166,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				BDB85F1F57AC69BD3100E773 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +232,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		BDB85F1F57AC69BD3100E773 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snake/Pods-snake-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snake/Pods-snake-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		C177480E9043391C24CB3D16 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -370,6 +389,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -423,6 +443,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

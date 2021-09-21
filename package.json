@@ -19,8 +19,8 @@
     "mobx": "^6.3.3",
     "mobx-persist": "^0.4.1",
     "mobx-react-lite": "^3.2.1",
-    "react": "16.13.1",
-    "react-native": "0.63.4",
+    "react": "17.0.2",
+    "react-native": "0.64.2",
     "react-native-exit-app": "^1.1.0",
     "react-native-game-engine": "^1.2.0",
     "react-native-gesture-handler": "^1.10.3",
@@ -29,8 +29,7 @@
     "react-native-background-color": "0.0.8",
     "react-native-splash-screen": "^3.2.0",
     "react-native-safe-area-context": "^0.7.3",
-    "react-native-screens": "^2.2.0",
-    "hermes-engine": "0.5.2-rc1"
+    "react-native-screens": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -55,9 +54,9 @@
     "eslint-plugin-react-hooks": "^2.5.0",
     "eslint-plugin-react-native": "^3.8.1",
     "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.59.0",
+    "metro-react-native-babel-preset": "^0.66.2",
     "react-native-console-time-polyfill": "^1.2.1",
-    "react-test-renderer": "16.13.1",
+    "react-test-renderer": "17.0.2",
     "typescript": "^4.4.3"
   },
   "jest": {
