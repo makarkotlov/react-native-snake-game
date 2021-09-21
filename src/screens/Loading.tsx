@@ -40,6 +40,7 @@ const Loading = observer(() => {
     Animated.timing(animation.current, {
       toValue: progress,
       duration: loadingDuration,
+      useNativeDriver: false
     }).start()
   }, [progress])
 
