@@ -36,27 +36,27 @@ class SettingsStore {
 
   loaded = false
 
-  setLoaded(loaded: boolean) {
+  setLoaded = (loaded: boolean) => {
     this.loaded = loaded
   }
 
-  updateBoardSize(boardSize: string) {
+  updateBoardSize = (boardSize: string) => {
     this.settings.boardSize = boardSize
   }
 
-  updateDifficulty(difficulty: string) {
+  updateDifficulty = (difficulty: string) => {
     this.settings.difficulty = difficulty
   }
 
-  updateTheme(theme: string) {
+  updateTheme = (theme: string) => {
     this.settings.theme = theme
   }
 
-  updateUseSwipes(useSwipes: boolean) {
+  updateUseSwipes = (useSwipes: boolean) => {
     this.settings.useSwipes = useSwipes
   }
 
-  updateTeleport(useTeleport: boolean) {
+  updateTeleport = (useTeleport: boolean) => {
     this.settings.useTeleport = useTeleport
   }
 }
