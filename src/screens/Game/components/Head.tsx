@@ -1,21 +1,22 @@
 import React from 'react'
-import { observer } from 'mobx-react-lite'
+import { observer } from 'mobx-react'
 import { StyleSheet, View } from 'react-native'
-import c from '../constants'
-import { useStores } from '../mobx'
-import { ISettingsStore } from '../mobx/settingsStore'
 
-interface Props {
-  position: Array<number>
-  size: number
+import c from '@constants'
+import SettingsStore from 'stores/SettingsStore'
+
+type Props = {
+  position?: number[]
+  size?: number
 }
 
-const Head: React.FC<Props> = observer(({ position, size }) => {
-  const {
-    settingsStore: {
-      settings: { theme },
-    },
-  }: ISettingsStore = useStores()
+const Head = ({ position, size }: Props) => {
+  if (!position?.length || !size) {
+    return null
+  }
+
+  const { theme } = SettingsStore.settings
+
   const x = position[0]
   const y = position[1]
 
@@ -33,10 +34,10 @@ const Head: React.FC<Props> = observer(({ position, size }) => {
       ]}
     />
   )
-})
+}
 
 const styles = StyleSheet.create({
   head: { position: 'absolute' },
 })
 
-export default Head
+export default observer(Head)

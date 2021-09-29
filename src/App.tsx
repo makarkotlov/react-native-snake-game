@@ -1,11 +1,7 @@
 import React from 'react'
-import { StoreProvider } from './mobx'
-import { Navigator } from './Navigator'
 
-const SnakeApp = () => (
-  <StoreProvider>
-    <Navigator />
-  </StoreProvider>
-)
+import Navigator from 'navigator'
+
+const SnakeApp = () => <Navigator />
 
 export default SnakeApp
