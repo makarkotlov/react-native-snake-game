@@ -5,10 +5,6 @@ module.exports = {
   },
   extends: ['airbnb', '@typescript-eslint'],
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
   ecmaFeatures: {
     jsx: true,
   },

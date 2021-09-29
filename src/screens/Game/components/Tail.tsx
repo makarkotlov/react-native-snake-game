@@ -1,22 +1,24 @@
 import React from 'react'
 import { View } from 'react-native'
-import { observer } from 'mobx-react-lite'
-import c from '../constants'
-import { useStores } from '../mobx'
-import { ISettingsStore } from '../mobx/settingsStore'
+import { observer } from 'mobx-react'
 
-interface Props {
-  elements: Array<Array<number>>
-  size: number
+import c from '@constants'
+import SettingsStore from 'stores/SettingsStore'
+
+type Props = {
+  elements?: number[][]
+  size?: number
 }
 
-const Tail: React.FC<Props> = observer(({ elements, size }) => {
-  const {
-    settingsStore: {
-      settings: { boardSize, theme },
-    },
-  }: ISettingsStore = useStores()
+const Tail = ({ elements, size }: Props) => {
+  if (!elements?.length || !size) {
+    return null
+  }
+
+  const { boardSize, theme } = SettingsStore.settings
+
   const gridSize = parseInt(boardSize.slice(0, 2), 10)
+
   const tailList = elements.map((el, i) => (
     <View
       key={i}
@@ -30,7 +32,8 @@ const Tail: React.FC<Props> = observer(({ elements, size }) => {
       }}
     />
   ))
-  return <View style={{ width: gridSize * size, height: gridSize * size }}>{tailList}</View>
-})
 
-export default Tail
+  return <View style={{ width: gridSize * size, height: gridSize * size }}>{tailList}</View>
+}
+
+export default observer(Tail)

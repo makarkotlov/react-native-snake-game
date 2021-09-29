@@ -1,12 +1,16 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
-interface Props {
-  position: Array<number>
-  size: number
+type Props = {
+  position?: number[]
+  size?: number
 }
 
-const Food: React.FC<Props> = ({ position, size }) => {
+const Food = ({ position, size }: Props) => {
+  if (!position?.length || !size) {
+    return null
+  }
+
   const x = position[0]
   const y = position[1]
 
@@ -27,7 +31,10 @@ const Food: React.FC<Props> = ({ position, size }) => {
 }
 
 const styles = StyleSheet.create({
-  food: { position: 'absolute', borderRadius: 10 },
+  food: {
+    position: 'absolute',
+    borderRadius: 10,
+  },
 })
 
 export default Food
