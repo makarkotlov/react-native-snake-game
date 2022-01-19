@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 import { create, persist } from 'mobx-persist'
-import AsyncStorage from '@react-native-community/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import c, { BoardSizes, ColorThemes, Difficulties } from '@constants'
 

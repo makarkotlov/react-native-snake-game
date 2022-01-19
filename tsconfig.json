@@ -13,10 +13,9 @@
     "isolatedModules": true,
     "strict": true,
     "paths": {
-      "*": ["*"],
-    },src/@constants
-    "skipLibCheck": true,
-    "resolveJsonModule": true
+      "*": ["*"]
+    },
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "build", "ios", "android"]
 }
